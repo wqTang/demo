@@ -30,8 +30,7 @@ public class ByteBufDemo {
 		int r1 = buf.readerIndex(); // 0
 		int w1 = buf.writerIndex(); // 0
 
-		buf.writeBytes(str.getBytes()); // copy bytes into
-										// UnpooledHeapByteBuf.array byte[]
+		buf.writeBytes(str.getBytes()); // copy bytes into UnpooledHeapByteBuf.array byte[]
 		int r2 = buf.readerIndex(); // 0
 		int w2 = buf.writerIndex(); // 13
 
