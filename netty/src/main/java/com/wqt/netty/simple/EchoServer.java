@@ -34,7 +34,8 @@ public class EchoServer {
 		bootstrap.group(boss, worker);
 		bootstrap.channel(NioServerSocketChannel.class);
 		bootstrap.localAddress(port);
-		bootstrap.childHandler(initializer);
+		bootstrap.handler(null); // for boss
+		bootstrap.childHandler(initializer); // for worker
 
 		ChannelFuture future = bootstrap.bind().sync(); // DefaultPromise.sync();
 		future.channel().closeFuture().sync();
