@@ -34,8 +34,7 @@ public class ByteBufDemo {
 		int r2 = buf.readerIndex(); // 0
 		int w2 = buf.writerIndex(); // 13
 
-		int length = buf.readableBytes(); // readableBytes = writerIndex -
-											// readerIndex
+		int length = buf.readableBytes(); // readableBytes = writerIndex - readerIndex
 
 		// This read operation process by CharBuffer (java.nio.CharBuffer)
 		String read = (String) buf.readCharSequence(length, CharsetUtil.UTF_8);
