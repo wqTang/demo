@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.wqt</groupId>
+	<artifactId>netflix</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>netflix</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.netflix.ribbon/ribbon -->
+		<dependency>
+			<groupId>com.netflix.ribbon</groupId>
+			<artifactId>ribbon</artifactId>
+			<version>2.2.0</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.netflix.ribbon/ribbon-httpclient -->
+		<dependency>
+			<groupId>com.netflix.ribbon</groupId>
+			<artifactId>ribbon-httpclient</artifactId>
+			<version>2.3.0</version>
+			<!-- ribbon dependencied a low version: 4.2.1 -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.httpcomponents</groupId>
+					<artifactId>httpclient</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.netflix.eureka/eureka-client -->
+		<dependency>
+			<groupId>com.netflix.eureka</groupId>
+			<artifactId>eureka-client</artifactId>
+			<version>1.8.0</version>
+			<scope>runtime</scope>
+			<!-- dependencied httpclient version: 4.3.4 -->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.netflix.governator/governator -->
+		<dependency>
+			<groupId>com.netflix.governator</groupId>
+			<artifactId>governator</artifactId>
+			<version>1.17.5</version>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+</project>
