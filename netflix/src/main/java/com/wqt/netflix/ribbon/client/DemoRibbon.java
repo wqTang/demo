@@ -51,7 +51,7 @@ public class DemoRibbon {
 
 		ZoneAwareLoadBalancer loadBalancer = (ZoneAwareLoadBalancer) restClient.getLoadBalancer();
 		System.out.println("load balancer:\n" + loadBalancer.getLoadBalancerStats());
-
+	
 		/**
 		 * dynamic change the servers list
 		 * 

@@ -28,6 +28,16 @@
 			<artifactId>ribbon</artifactId>
 			<version>2.2.0</version>
 			<scope>runtime</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>com.netflix.archaius</groupId>
+					<artifactId>archaius-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.netflix.ribbon</groupId>
+					<artifactId>ribbon-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.netflix.ribbon/ribbon-httpclient -->
@@ -51,6 +61,12 @@
 			<version>1.8.0</version>
 			<scope>runtime</scope>
 			<!-- dependencied httpclient version: 4.3.4 -->
+			<exclusions>
+				<exclusion>
+					<groupId>com.netflix.archaius</groupId>
+					<artifactId>archaius-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.netflix.governator/governator -->
