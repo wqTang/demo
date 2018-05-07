@@ -56,7 +56,7 @@ public class SampleEurekaClient {
 		// initialize the client
 		// this is the virtual ip address for the example service to talk to as
 		// defined in 'sample-eureka-service.properties'
-		String vipAddress = "sampleservice.mydomain.net";
+		String vipAddress = "sample.mydomain.net";
 
 		InstanceInfo nextServerInfo = null;
 		nextServerInfo = eurekaClient.getNextServerFromEureka(vipAddress, false);
@@ -78,7 +78,7 @@ public class SampleEurekaClient {
 
 		// send a request to server and waiting response
 		try {
-			String request = "FOO " + new Date();
+			String request = "FOO " + new Date() + "\n";
 			System.out.println("Connected to server. Sending a request: " + request);
 
 			PrintStream out;

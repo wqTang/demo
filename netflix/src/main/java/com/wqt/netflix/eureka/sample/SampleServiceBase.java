@@ -43,10 +43,12 @@ public class SampleServiceBase {
 
 	@PostConstruct
 	public void start() {
-		// A good practice is to register as STARTING and only change status to UP
+		// A good practice is to register as STARTING and only change status to
+		// UP
 		// after the service is ready to receive traffic
 		System.out.println("Registering service to Eureka with STARTING status");
-		applicationInfoManager.setInstanceStatus(InstanceStatus.STARTING); // initialize status
+		applicationInfoManager.setInstanceStatus(InstanceStatus.STARTING); // initialize
+																			// status
 
 		System.out.println("Simulating service initialization by sleeping for 2 seconds...");
 		try {
@@ -89,16 +91,16 @@ public class SampleServiceBase {
 		InstanceInfo nextServerInfo = null;
 		while (nextServerInfo == null) {
 			try {
-                nextServerInfo = eurekaClient.getNextServerFromEureka(vipAddress, false);
-            } catch (Throwable e) {
-            	System.out.println(">>> failure: " + e);
+				nextServerInfo = eurekaClient.getNextServerFromEureka(vipAddress, false);
+			} catch (Throwable e) {
+				System.out.println(">>> waiting verify: " + e);
 
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-            }
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 	}
 
