@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.wqt.springboot.book.interceptors.LoginInterceptor;
 
 /**
- * Remember add @Configuration annotation.
+ * Don't forget to add @Configuration annotation.
  * 
  * @author iuShu
  * @date Mar 30, 2018 8:48:38 PM

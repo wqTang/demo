@@ -18,7 +18,7 @@ import io.netty.util.ResourceLeakDetector;
  *  @see ChannelHandlerAdapter#isSharable()
  *  
  *  It should be note that, use @Sharable only if you're certain that your ChannelHandler is 
- *  thread-safe.
+ *  <b>thread-safe</b>.
  */
 @Sharable
 public class DemoInboundHandler extends ChannelInboundHandlerAdapter{
@@ -43,7 +43,7 @@ public class DemoInboundHandler extends ChannelInboundHandlerAdapter{
 	 * ==> '-Dio.netty.leakDetectionLevel=ADVANCED' or call method:
 	 * @see ResourceLeakDetector#setLevel(io.netty.util.ResourceLeakDetector.Level)
 	 * 
-	 * Don't release resources if the resource need to be reference in the next ChannelHandler.
+	 * <b>Don't release resources if the resource need to be reference in the next ChannelHandler.</b>
 	 */
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -67,4 +67,5 @@ public class DemoInboundHandler extends ChannelInboundHandlerAdapter{
 		cause.printStackTrace();
 		ctx.close();
 	}
+	
 }
